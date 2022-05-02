@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <BaNavBar />
-  </div>
+  <div>index</div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@nuxtjs/composition-api'
 
-export default Vue.extend({
-  name: 'IndexPage',
+export default defineComponent({
   components: {},
 })
 </script>

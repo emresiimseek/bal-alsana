@@ -1,0 +1,53 @@
+// Media mixins
+@mixin for-mobile {
+  @media (max-width: map-get($breakpoints, 'mobile-max')) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: map-get($breakpoints, 'tablet-min')) and (max-width: map-get($breakpoints, 'tablet-max')) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media (max-width: map-get($breakpoints, 'tablet-max')) {
+    @content;
+  }
+}
+
+@mixin for-tablet-up {
+  @media (min-width: map-get($breakpoints, 'tablet-min')) {
+    @content;
+  }
+}
+
+@mixin for-desktop-xs {
+  // 1024...1280px (used in edge cases to avoid issues on landscape tablet (1024))
+  @media (min-width: map-get($breakpoints, 'desktop-min')) and (max-width: map-get($breakpoints, 'desktop-xl-min') - 1) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (min-width: map-get($breakpoints, 'desktop-min')) {
+    @content;
+  }
+}
+
+@mixin for-desktop-xl {
+  // >= 1281px widescreen
+  @media (min-width: map-get($breakpoints, 'desktop-xl-min')) {
+    @content;
+  }
+}
+
+@mixin site-width() {
+  box-sizing: border-box;
+
+  @include for-desktop {
+    max-width: var(--site-width);
+    margin: auto;
+  }
+}

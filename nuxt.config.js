@@ -9,28 +9,52 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Oswald|Libre+Baskerville&display=swap',
+      },
+    ],
+  },
+  env: {
+    API_TOKEN: process.env.API_TOKEN,
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~assets/scss/global.scss',
+    '~assets/scss/colors.scss',
+    '~assets/scss/variables.scss',
+    '~assets/scss/mixin.scss',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [
+    {
+      path: '~/components',
+      extensions: ['vue'],
+      ignore: ['~components/pages', '**/_**'],
+    },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/composition-api/module',
+    '@nuxtjs/router-extras',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/style-resources',
+
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
@@ -38,11 +62,19 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
+  styleResources: {
+    scss: ['./assets/scss/*.scss'],
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: process.env.BASE_URL,
+    headers: {
+      common: {
+        Authorization: 'Bearer' + ' ' + process.env.API_TOKEN,
+      },
+    },
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
