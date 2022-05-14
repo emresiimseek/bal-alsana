@@ -6,4 +6,5 @@ export interface CardItem<T = any> {
   images: string[]
   detail: T
   to: RawLocation
+  coverImage: string
 }

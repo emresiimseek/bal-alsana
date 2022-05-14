@@ -11,6 +11,7 @@ export const productMapper = (item: StrapiData<Product>): CardItem => {
     detail: item,
     title: item.attributes.title,
     to: { name: 'products-id', params: { id: item.id.toString() } },
+    coverImage: `http://localhost:1337${item.attributes.image.data[0].attributes.url}`,
   }
 }
 

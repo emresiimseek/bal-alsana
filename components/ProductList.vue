@@ -1,20 +1,26 @@
 <template>
-  <div class="product-container">
-    <CardItem v-for="item in cardItems" :key="item.title" :item="item" />
+  <div v-if="items.length" class="product-container">
+    <CardItem v-for="item in items" :key="item.title" :item="item" />
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, Ref, ref, watchEffect } from '@nuxtjs/composition-api'
 import { useProducts } from '~/composables/useProducts'
 import { productListMapper } from '~/helper/mappers/ProductMapper'
+import { CardItem } from '~/types/CardItem'
 
 export default defineComponent({
   name: 'ProductList',
   setup() {
     const { products } = useProducts()
-    const cardItems = computed(() => productListMapper(products.value))
-    return { cardItems }
+
+    const items: Ref<CardItem[]> = ref([])
+    const mapProducts = () => {
+      items.value = productListMapper(products.value)
+    }
+    watchEffect(() => products.value && mapProducts())
+    return { items }
   },
 })
 </script>

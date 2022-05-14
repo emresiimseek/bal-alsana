@@ -17,19 +17,29 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, useRoute } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  Ref,
+  ref,
+  useRoute,
+  watchEffect,
+} from '@nuxtjs/composition-api'
 import { useProduct } from '~/composables/useProduct'
 import { productMapper } from '~/helper/mappers/ProductMapper'
+import { CardItem } from '~/types/CardItem'
 
 export default defineComponent({
   components: {},
   setup() {
     const route = useRoute()
     const { product } = useProduct(route.value.params.id)
+    const item: Ref<CardItem | null> = ref(null)
 
-    const item = computed(() =>
-      product.value ? productMapper(product.value) : null
-    )
+    const mapProduct = () => {
+      if (product.value) item.value = productMapper(product.value)
+    }
+
+    watchEffect(() => product.value && mapProduct())
 
     return { item }
   },
