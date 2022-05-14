@@ -40,8 +40,11 @@ export default defineComponent({
 .breadcrumb {
   border-radius: 0;
   font-size: small;
+  background-color: $yellow--3;
+  border-bottom: 1px solid #efefef;
 
-  .breadcrumb-item {
+  .breadcrumb-item a {
+    color: black;
   }
 }
 </style>

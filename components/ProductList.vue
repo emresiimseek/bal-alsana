@@ -8,25 +8,12 @@
 import { computed, defineComponent } from '@nuxtjs/composition-api'
 import { useProducts } from '~/composables/useProducts'
 import { productListMapper } from '~/helper/mappers/ProductMapper'
-import { Product } from '~/types/strapi/product'
 
 export default defineComponent({
   name: 'ProductList',
   setup() {
     const { products } = useProducts()
-
-    const items = computed(
-      () =>
-        products.value?.map(
-          (x): Product => ({
-            ...x.attributes,
-            id: x.id,
-          })
-        ) ?? []
-    )
-
-    const cardItems = computed(() => productListMapper(items.value))
-
+    const cardItems = computed(() => productListMapper(products.value))
     return { cardItems }
   },
 })

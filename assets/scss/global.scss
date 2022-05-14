@@ -9,5 +9,10 @@ html, body {
 }
 
 .container {
-  max-width: 1536px;
+  max-width: 1281px;
+}
+
+.img-zoom {
+  transition-duration: 0.5s;
+  transform: scale(1.05);
 }

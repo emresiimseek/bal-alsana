@@ -1,8 +1,8 @@
 <template>
-  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to">
+  <div :is="clonedItem.to ? 'nuxt-link' : 'div'" tag="div" :to="clonedItem.to">
     <b-card
-      :title="item.title"
-      :img-src="item.image"
+      :title="clonedItem.title"
+      :img-src="clonedItem.images[0]"
       img-alt="Image"
       img-top
       tag="article"
@@ -10,9 +10,9 @@
       class="mb-2"
     >
       <b-card-text>
-        {{ item.description }}
+        {{ clonedItem.description }}
       </b-card-text>
-      <b-button href="#" variant="warning">Detay</b-button>
+      <b-button href="#">Detay</b-button>
     </b-card>
   </div>
 </template>
@@ -24,14 +24,20 @@ import { CardItem } from '~/types/CardItem'
 export default defineComponent({
   name: 'CardItem',
   props: { item: { type: Object as PropType<CardItem>, required: true } },
+  setup(props) {
+    const clonedItem = { ...props.item }
+
+    return { clonedItem }
+  },
 })
 </script>
 
 <style lang="scss" scoped>
-.btn {
-  color: rgb(255, 206, 77) !important;
-  background-color: var(--dark);
-  border: none;
+.card-text {
+  white-space: nowrap;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card {

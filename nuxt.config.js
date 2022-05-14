@@ -27,6 +27,7 @@ export default {
     '~assets/scss/colors.scss',
     '~assets/scss/variables.scss',
     '~assets/scss/mixin.scss',
+    '~assets/scss/button.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
