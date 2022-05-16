@@ -3,8 +3,7 @@
     <b-navbar
       toggleable="lg"
       type="dark"
-      fixed="top"
-      :sticky="true"
+      :fixed="position"
       class="navbar-custom"
     >
       <div class="container">
@@ -53,7 +52,12 @@
 </template>
 
 <script>
-import { defineComponent } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  onMounted,
+  onUnmounted,
+  ref,
+} from '@nuxtjs/composition-api'
 import { useProducts } from '@/composables/useProducts'
 
 export default defineComponent({
@@ -61,8 +65,21 @@ export default defineComponent({
 
   setup() {
     const { data } = useProducts()
+    const position = ref('')
 
-    return { data }
+    const onScroll = () => {
+      window.pageYOffset > 20 ? (position.value = 'top') : (position.value = '')
+    }
+
+    onMounted(() => {
+      window.addEventListener('scroll', onScroll)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', onScroll)
+    })
+
+    return { data, position }
   },
 })
 </script>
@@ -88,5 +105,8 @@ a.nav-link {
 
 .navbar {
   background-color: $brown--1;
+  @include for-desktop {
+    height: var(--desktop-nav-height);
+  }
 }
 </style>

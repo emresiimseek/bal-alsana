@@ -1,5 +1,7 @@
 <template>
-  <ProductList />
+  <div class="container">
+    <ProductList />
+  </div>
 </template>
 <router>{meta: { navName: 'Ürünler' }}</router>
 <script lang="ts">

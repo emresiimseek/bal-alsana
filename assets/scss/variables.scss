@@ -5,3 +5,10 @@ $breakpoints: (
   desktop-min: 1024px,
   desktop-xl-min: 1281px,
 );
+
+:root {
+  --desktop-nav-height: 72px;
+  --mobile-header-height: 80px;
+  --desktop-breadcrumb-height: 44px;
+
+}

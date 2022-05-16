@@ -86,3 +86,10 @@ export interface StrapiRoot<T> {
   data: StrapiData<T>
   meta: Meta
 }
+
+export interface HomePageCarousel {
+  createdAt: Date
+  updatedAt: Date
+  publishedAt: Date
+  image: Image
+}

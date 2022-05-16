@@ -1,11 +1,10 @@
 <template>
   <div>
-    <BaNavBar />
-    <BaBreadcrumb />
-
-    <div class="container">
-      <nuxt />
+    <div>
+      <BaNavBar />
     </div>
+    <BaBreadcrumb />
+    <nuxt />
   </div>
 </template>
 

@@ -12,7 +12,7 @@
       <b-card-text>
         {{ item.description }}
       </b-card-text>
-      <b-button href="#">Detay</b-button>
+      <b-button :to="item.to">Detay </b-button>
     </b-card>
   </div>
 </template>

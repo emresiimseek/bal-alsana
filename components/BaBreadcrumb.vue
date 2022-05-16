@@ -39,9 +39,11 @@ export default defineComponent({
 
 .breadcrumb {
   border-radius: 0;
+  margin: 0;
   font-size: small;
   background-color: $yellow--3;
   border-bottom: 1px solid #efefef;
+  height: var(--desktop-breadcrumb-height);
 
   .breadcrumb-item a {
     color: black;
