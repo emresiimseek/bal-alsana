@@ -1,58 +1,63 @@
 <template>
   <div class="home-container">
-    <BaCarousel :items="urls" />
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nemo odio
-    quod vitae. A aliquid autem cum cupiditate, error esse eveniet ipsam nostrum
-    nulla quibusdam, sed vitae voluptas voluptatum. Autem, cupiditate dicta
-    dolor dolorem ducimus eveniet expedita ipsam iure minima nobis officia
-    officiis omnis perspiciatis quasi quidem reprehenderit rerum sed soluta
-    tempora temporibus. Alias aspernatur assumenda at atque autem commodi
-    consectetur cumque debitis deserunt dignissimos distinctio dolorem
-    doloremque eaque earum enim ipsa iure labore laborum libero magni molestiae
-    mollitia nam neque nisi non pariatur perferendis placeat, possimus
-    praesentium ratione sint sit sunt suscipit tempora unde velit voluptates?
-    Accusamus alias cum cumque deleniti enim facilis hic illum iste minima
-    molestiae natus nesciunt non nulla sapiente, ullam ut vero! Animi blanditiis
-    fugit non obcaecati praesentium similique velit veritatis! Accusantium
-    beatae delectus deserunt, dolore dolorem eius est in ipsa maxime neque
-    praesentium quo similique, tempora tempore totam voluptate voluptatibus!
-    Asperiores at atque beatae consequuntur deleniti dolor dolores, eaque
-    eligendi esse est nam natus, nostrum numquam praesentium quidem, quo
-    sapiente similique unde ut voluptatem! Ipsam nulla provident quaerat ratione
-    tempore. Cumque debitis dolores eum, inventore ipsa iste nam nostrum
-    obcaecati sint sit. Adipisci aspernatur debitis dolores doloribus expedita
-    illo laudantium minima neque, non quae quos repudiandae voluptatum. Aliquid
-    laboriosam libero praesentium qui quidem. Assumenda autem consectetur cum
-    delectus dolor et vero? Fuga, illo ipsum natus necessitatibus nisi porro
-    quaerat quia voluptate! Corporis dolor enim modi rerum? Asperiores
-    blanditiis debitis delectus dicta dolorem earum, eos in magni molestiae
-    sapiente, ut, voluptates! Aspernatur delectus ea fugit laborum officiis
-    repudiandae ullam? Animi, cumque distinctio dolorem ea error ipsa ipsam iste
-    nam nostrum obcaecati quasi, quidem reiciendis. Adipisci, aperiam at
-    consequatur dignissimos eligendi ex expedita explicabo incidunt ipsum iste
-    iusto laborum non obcaecati quam quos repellendus tempore voluptate! Ad
-    aliquam architecto assumenda culpa debitis deserunt doloremque ducimus,
-    eaque earum eos error et fugiat laboriosam magni nemo nihil nisi odit omnis
-    placeat quo ratione reiciendis repellat repellendus reprehenderit rerum sed
-    sequi soluta vel voluptates voluptatibus! Aut cumque, distinctio dolorum
-    eius incidunt molestias mollitia nemo omnis quam quidem tempora velit vero
-    voluptatum. Aperiam asperiores assumenda beatae blanditiis culpa distinctio
-    et eveniet explicabo facilis in labore magni, necessitatibus nihil provident
-    quae quibusdam quisquam quos reiciendis repellat repellendus saepe sequi
-    sunt tempora temporibus unde ut voluptatem voluptatum. Alias asperiores
-    dolore illo laborum nihil repellendus, voluptatum. Esse eveniet id impedit
-    odio quod, repellat tempore. A, ad aspernatur atque beatae culpa eligendi
-    illum in iste iusto laboriosam libero nobis nulla quis quisquam rerum
-    suscipit tempore totam ullam! Aliquid consectetur est ex ipsa nostrum vero.
-    Consequuntur deserunt itaque laudantium minima nisi, nulla perspiciatis
-    praesentium quaerat quidem saepe! Ab ad amet atque corporis doloribus esse
-    explicabo facere minima modi nam necessitatibus nobis non nulla obcaecati
-    odio officiis, possimus quae, repellat reprehenderit, similique sunt
-    suscipit totam voluptatum! Eum iste maxime provident? A ab beatae
-    dignissimos distinctio dolor dolore dolores, eligendi est et excepturi in
-    iusto molestias nemo nesciunt nihil odio officia officiis possimus
-    repellendus sed sequi similique velit. Corporis eius iure iusto numquam
-    obcaecati voluptates! Quam, rem?
+    <BaCarousel :items="urls" class="home-carousel" />
+    <div class="test">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
+      reiciendis, temporibus. A ad adipisci amet architecto asperiores
+      assumenda, at blanditiis corporis deleniti enim eum, excepturi incidunt
+      ipsam ipsum laboriosam libero mollitia nobis officia perferendis quaerat
+      qui reiciendis repudiandae similique temporibus vel vitae voluptas.
+      Architecto, aut, doloribus? Accusamus delectus maxime quae repellendus
+      veniam vero. Animi ea earum fugit id illum ipsam iusto laboriosam magni
+      minima modi molestias nihil odio odit, omnis, optio possimus quis ratione
+      repudiandae? Aperiam dolor eveniet illo maiores nobis pariatur rem?
+      Adipisci, aspernatur atque blanditiis dicta earum facere itaque magni
+      minus officia omnis perspiciatis possimus quidem sint temporibus tenetur
+      ut vitae. Amet consequatur dicta fugit illo libero nisi temporibus?
+      Accusantium consequatur eos eveniet exercitationem fuga fugit illum labore
+      magnam minus numquam odio officia optio placeat quisquam ratione
+      repellendus repudiandae totam veritatis, vero voluptatibus. Consequatur
+      dicta fugiat, incidunt iste labore placeat provident? Alias animi,
+      asperiores delectus dolorem facere fugiat illum impedit ipsa itaque, modi
+      nobis quod ratione repellendus? Amet asperiores cupiditate, exercitationem
+      fugit harum id iure laborum magnam molestiae nobis quaerat similique
+      soluta ullam. Accusantium beatae consectetur consequuntur debitis dolor
+      ducimus eaque est, et excepturi, fuga impedit incidunt iure maxime, minus
+      mollitia nihil nobis perferendis quidem quis quisquam quo ratione sed sint
+      unde vero! Architecto assumenda blanditiis consectetur cupiditate
+      dignissimos dolorum ea eaque eligendi fugit harum illo illum ipsum iure
+      iusto laudantium maiores maxime modi necessitatibus nostrum nulla odio
+      odit officia officiis placeat quaerat, qui quia quidem quis quos ratione
+      repellat repellendus sapiente sint tenetur velit veniam veritatis. Autem
+      culpa delectus eaque nemo repellat similique vel vero! Debitis delectus
+      molestiae nisi optio quas. Cupiditate deleniti dolore dolores dolorum eius
+      error esse illum nesciunt odio praesentium quaerat, quas quod reiciendis
+      reprehenderit sit suscipit voluptatem. A ad aperiam consectetur delectus
+      dignissimos doloribus explicabo, facere id laudantium modi necessitatibus
+      non perspiciatis qui quis quisquam recusandae repellat voluptatum. Autem
+      dignissimos dolor doloribus eius eligendi esse facere fuga fugit inventore
+      ipsum labore laboriosam magnam magni, necessitatibus nulla obcaecati odio
+      omnis perspiciatis quae, quasi quibusdam, quisquam quo sapiente sit
+      tempora voluptate voluptatem! Accusantium architecto consequatur debitis
+      doloribus ducimus eius eligendi eos, eum expedita harum hic molestiae
+      mollitia neque nihil qui quidem quo? Accusantium cumque dignissimos
+      explicabo fugiat labore, laboriosam laborum magni maiores molestias
+      officiis omnis, sit sunt suscipit tempora tenetur ullam vitae? Doloremque
+      nemo, nihil perspiciatis quisquam temporibus voluptatum? Dolor eveniet
+      exercitationem expedita magnam molestiae molestias nemo quos repudiandae,
+      saepe velit. Accusantium adipisci aspernatur beatae debitis deserunt
+      dolores doloribus, dolorum enim error ex exercitationem fuga illo incidunt
+      inventore ipsum iste, magnam minus molestiae mollitia nulla officia optio
+      perferendis perspiciatis porro provident qui quibusdam quidem quos ratione
+      reiciendis rem reprehenderit repudiandae sed sit tempore temporibus vero?
+      Dolore, doloremque earum fuga iusto molestiae neque quod sunt temporibus
+      velit voluptates. Ab aliquid asperiores cupiditate delectus distinctio
+      dolorum, eaque error fugiat hic illum iste modi nihil numquam porro,
+      quibusdam quis quisquam reiciendis reprehenderit repudiandae tempora
+      tenetur vel velit vero. Delectus ducimus error esse fugit incidunt minus
+      praesentium quae quis totam vel. Alias autem fugiat illum necessitatibus
+      nihil repellendus unde.
+    </div>
   </div>
 </template>
 
@@ -78,11 +83,15 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-.home-container {
-  overflow: hidden;
-}
+.home-carousel {
+  height: calc(100vh - var(--total-header-height));
 
-.carousel-item {
-  //top: calc(var(--desktop-nav-height) + var(--desktop-breadcrumb-height));
+  .carousel-item {
+    height: calc(100vh - var(--total-header-height));
+
+    img {
+      height: calc(100vh - var(--total-header-height));
+    }
+  }
 }
 </style>

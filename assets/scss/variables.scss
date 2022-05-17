@@ -10,5 +10,6 @@ $breakpoints: (
   --desktop-nav-height: 72px;
   --mobile-header-height: 80px;
   --desktop-breadcrumb-height: 44px;
+  --total-header-height: calc(var(--desktop-nav-height) + var(--desktop-breadcrumb-height))
 
 }
