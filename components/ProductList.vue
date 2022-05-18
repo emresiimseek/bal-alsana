@@ -27,8 +27,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .product-container {
-  display: flex;
   padding-top: 2rem;
+  gap: 3rem;
+  display: inline-flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   @include for-mobile {
@@ -37,8 +39,5 @@ export default defineComponent({
     padding-top: 2rem;
     flex-wrap: wrap;
   }
-}
-
-.product-container {
 }
 </style>
