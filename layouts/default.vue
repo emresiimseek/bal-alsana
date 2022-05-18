@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>
-      <BaNavBar />
-    </div>
+    <BaNavBar />
     <BaBreadcrumb />
     <nuxt />
   </div>

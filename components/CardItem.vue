@@ -1,18 +1,19 @@
 <template>
-  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to">
+  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to" class="test">
     <b-card
-      :title="item.title"
-      :img-src="item.coverImage"
       img-alt="Image"
       img-top
       tag="article"
       style="max-width: 20rem"
-      class="mb-2"
+      class="mb-2 card-container"
     >
+      <template #header>
+        <BaCarousel :items="item.carouselItems" :interval="0" />
+      </template>
       <b-card-text>
         {{ item.description }}
       </b-card-text>
-      <b-button :to="item.to">Detay </b-button>
+      <b-button :to="item.to">Detay</b-button>
     </b-card>
   </div>
 </template>
@@ -40,8 +41,8 @@ export default defineComponent({
   cursor: pointer;
   transition-duration: 0.5s;
 
-  @include for-desktop {
-    margin-right: 2rem;
+  .card-header {
+    padding: 0;
   }
 
   img {

@@ -1,12 +1,12 @@
-import { Product } from '~/types/strapi/product'
+import { StarapiProduct } from '~/types/strapi/StarapiProduct'
 import { CardItem } from '~/types/CardItem'
-import { StrapiData } from '~/types/strapi/StrapiArray'
+import { StrapiData } from '~/types/strapi/Strapi'
 
-export const productMapper = (item: StrapiData<Product>): CardItem => {
+export const productMapper = (item: StrapiData<StarapiProduct>): CardItem => {
   return {
-    images: item.attributes.image.data.map(
-      (i) => `http://localhost:1337${i.attributes.url}`
-    ),
+    carouselItems: item.attributes.image.data.map((i) => ({
+      img: `http://localhost:1337${i.attributes.url}`,
+    })),
     description: item.attributes.description,
     detail: item,
     title: item.attributes.title,
@@ -15,5 +15,6 @@ export const productMapper = (item: StrapiData<Product>): CardItem => {
   }
 }
 
-export const productListMapper = (items?: StrapiData<Product>[]): CardItem[] =>
-  items?.length ? [...items].map((p) => productMapper(p)) : []
+export const productListMapper = (
+  items?: StrapiData<StarapiProduct>[]
+): CardItem[] => (items?.length ? [...items].map((p) => productMapper(p)) : [])

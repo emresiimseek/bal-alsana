@@ -1,5 +1,5 @@
 <template>
-  <BBreadcrumb>
+  <BBreadcrumb v-if="items.length > 1">
     <div class="container breadcrumb-container">
       <b-breadcrumb-item
         v-for="(item, i) in items"
@@ -26,6 +26,8 @@ export default defineComponent({
     routes.forEach((r) => {
       items.value.push({ text: r.meta.navName, href: r.path })
     })
+
+    items.value = items.value.filter((i) => i.text)
 
     return { items, routes, value: route.value.query }
   },

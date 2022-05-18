@@ -2,8 +2,7 @@
   <div v-if="item" class="container detail-page">
     <div class="detail-page__main">
       <div class="detail-page__main__img">
-        <!--        <b-img :src="item.image" fluid alt="Responsive image"></b-img>-->
-        <BaCarousel :items="item.images" />
+        <BaCarousel :items="item.carouselItems" />
       </div>
     </div>
     <div class="detail-page__right-side">
@@ -48,6 +47,7 @@ export default defineComponent({
 <style lang="scss">
 .detail-page {
   display: flex;
+  margin-top: 1rem;
 
   &__right-side {
     flex: 2;
