@@ -17,8 +17,8 @@
         <b-collapse id="nav-collapse" class="custom-nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item href="/products">Ürünler</b-nav-item>
-            <b-nav-item href="#">Blog</b-nav-item>
-            <b-nav-item href="#">Hakkımızda</b-nav-item>
+            <b-nav-item href="/blogs">Blog</b-nav-item>
+            <b-nav-item href="/about-us">Hakkımızda</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->

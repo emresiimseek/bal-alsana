@@ -48,7 +48,14 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/composition-api/module',
     '@nuxtjs/router-extras',
+    '@nuxtjs/markdownit',
   ],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
