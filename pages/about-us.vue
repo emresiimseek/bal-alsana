@@ -20,6 +20,6 @@ export default defineComponent({
 
 <style scoped>
 .container-about-me {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 </style>

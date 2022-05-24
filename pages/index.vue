@@ -7,6 +7,7 @@
       :interval="10000"
       has-icon-down
     />
+    <SlickCarousel />
   </div>
 </template>
 

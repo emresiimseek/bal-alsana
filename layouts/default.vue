@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="main">
     <BaNavBar />
     <BaBreadcrumb />
-    <nuxt />
+    <nuxt class="body" />
+    <client-only>
+      <BaFooter />
+    </client-only>
   </div>
 </template>
 
@@ -11,4 +14,13 @@ import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({})
 </script>
-<style scoped></style>
+<style lang="scss" scoped>
+.main {
+  position: relative;
+  min-height: 100vh;
+
+  .body {
+    padding-bottom: 15rem;
+  }
+}
+</style>

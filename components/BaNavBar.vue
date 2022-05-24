@@ -30,20 +30,11 @@
                   class="mr-sm-2"
                   placeholder="Search"
                 ></b-form-input>
-                <b-button size="sm" class="my-2 my-sm-0" type="submit"
-                  >Search
+                <b-button size="sm" class="my-2 my-sm-0" type="submit">
+                  <BIconSearch />
                 </b-button>
               </div>
             </b-nav-form>
-
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template #button-content>
-                <em>User</em>
-              </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </div>
@@ -58,10 +49,12 @@ import {
   onUnmounted,
   ref,
 } from '@nuxtjs/composition-api'
+import { BIconSearch } from 'bootstrap-vue'
 import { useProducts } from '@/composables/useProducts'
 
 export default defineComponent({
   name: 'BaNavBar',
+  components: { BIconSearch },
 
   setup() {
     const { data } = useProducts()
