@@ -39,7 +39,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card-container {
-  margin: auto;
+  @include for-mobile {
+    margin: auto;
+  }
 }
 
 .card-text {
