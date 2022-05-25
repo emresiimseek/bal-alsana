@@ -1,19 +1,21 @@
 <template>
-  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to" class="test">
+  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to">
     <b-card
       img-alt="Image"
       img-top
       tag="article"
-      style="max-width: 20rem"
+      style="max-width: 20rem; min-height: 10rem"
       class="mb-2 card-container"
     >
       <template #header>
-        <BaCarousel :items="item.carouselItems" :interval="0" />
+        <BaCarousel :items="item.carouselItems" :interval="5000" />
       </template>
       <b-card-text>
         {{ item.description }}
       </b-card-text>
-      <b-button :to="item.to">Detay</b-button>
+      <div class="card-button">
+        <b-button :to="item.to">Detay</b-button>
+      </div>
     </b-card>
   </div>
 </template>
@@ -31,8 +33,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card-text {
-  white-space: nowrap;
-  width: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -40,6 +43,7 @@ export default defineComponent({
 .card {
   cursor: pointer;
   transition-duration: 0.5s;
+  height: 30rem !important;
 
   .card-header {
     padding: 0;
@@ -58,6 +62,19 @@ export default defineComponent({
       transition-duration: 0.5s;
       transform: scale(1.05);
     }
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-button {
+  .btn {
+    float: right;
+    font-size: small;
   }
 }
 </style>

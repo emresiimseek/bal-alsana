@@ -1,6 +1,6 @@
 <template>
   <div v-if="footer" class="container-footer">
-    <div class="container-footer__main container">
+    <div class="container-footer__main">
       <div class="container-footer__main__contact-info">
         <div class="icon-container">
           <BIconPinMap scale="1.5" />
@@ -83,17 +83,15 @@ a {
   position: absolute;
   bottom: 0;
   width: 100%;
-
   background-color: $brown--1;
   color: $yellow--2;
-  bottom: 0;
-  width: 100%;
-  min-height: 15rem;
+  min-height: 20rem;
   align-items: center;
   display: flex;
 
   &__main {
     display: flex;
+    margin: 0 3rem 0 3rem;
     justify-content: space-between;
     align-items: center;
 
@@ -134,7 +132,7 @@ a {
     }
 
     &__logo {
-      flex: 2;
+      flex: 1;
       display: flex;
       justify-content: center;
       flex-direction: column;

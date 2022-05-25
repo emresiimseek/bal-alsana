@@ -1,17 +1,20 @@
 <template>
-  <div v-if="item" class="container detail-page">
-    <div class="detail-page__main">
-      <div class="detail-page__main__img">
-        <BaCarousel :items="item.carouselItems" />
+  <div>
+    <div v-if="item" class="container detail-page">
+      <div class="detail-page__main">
+        <div class="detail-page__main__img">
+          <BaCarousel :items="item.carouselItems" />
+        </div>
+      </div>
+      <div class="detail-page__right-side">
+        <h2>{{ item.title }}</h2>
+        <div class="detail-page__right-side__desc">{{ item.description }}</div>
+        <div class="detail-page__right-side__price">
+          {{ item.detail.attributes.price }} <span> TL </span>
+        </div>
       </div>
     </div>
-    <div class="detail-page__right-side">
-      <h2>{{ item.title }}</h2>
-      <div class="detail-page__right-side__desc">{{ item.description }}</div>
-      <div class="detail-page__right-side__price">
-        {{ item.detail.attributes.price }} <span> TL </span>
-      </div>
-    </div>
+    <BaSpinner v-else />
   </div>
 </template>
 
@@ -76,6 +79,7 @@ export default defineComponent({
 
   &__main {
     flex: 3;
+    margin-bottom: 1rem;
 
     &__img {
       background-color: rgb(255, 255, 255);

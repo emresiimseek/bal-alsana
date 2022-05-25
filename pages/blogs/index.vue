@@ -1,6 +1,9 @@
 <template>
-  <div class="container container-blogs">
-    <CardItem v-for="item in items" :key="item.title" :item="item" />
+  <div>
+    <div v-if="items.length" class="container container-blogs">
+      <CardItem v-for="item in items" :key="item.title" :item="item" />
+    </div>
+    <BaSpinner v-else />
   </div>
 </template>
 

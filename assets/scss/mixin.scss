@@ -5,6 +5,10 @@
   }
 }
 
+@mixin toRem($property, $value) {
+  #{$property}: ($value / 16) + rem;
+}
+
 @mixin for-tablet {
   @media (min-width: map-get($breakpoints, 'tablet-min')) and (max-width: map-get($breakpoints, 'tablet-max')) {
     @content;

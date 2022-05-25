@@ -1,6 +1,9 @@
 <template>
-  <div v-if="items.length" class="product-container">
-    <CardItem v-for="item in items" :key="item.title" :item="item" />
+  <div>
+    <div v-if="items.length" class="product-container">
+      <CardItem v-for="item in items" :key="item.title" :item="item" />
+    </div>
+    <BaSpinner v-else />
   </div>
 </template>
 
@@ -27,7 +30,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .product-container {
-  padding-top: 2rem;
+  padding: 2rem 0 2rem 0;
   gap: 3rem;
   display: inline-flex;
   justify-content: center;

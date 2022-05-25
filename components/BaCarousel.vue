@@ -56,9 +56,13 @@ export default defineComponent({
   align-items: center;
   margin-bottom: 1rem;
   cursor: pointer;
+}
 
-  svg {
-    position: absolute;
-  }
+.carousel-item ::v-deep img {
+  aspect-ratio: 1 / 1;
+}
+
+svg {
+  position: absolute;
 }
 </style>

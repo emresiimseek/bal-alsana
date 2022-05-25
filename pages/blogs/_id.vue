@@ -1,7 +1,10 @@
 <template>
-  <div v-if="item" class="container container-blog">
-    <h1>{{ item.title }}</h1>
-    <div id="editor" v-html="$md.render(item.detail.attributes.detail)"></div>
+  <div>
+    <div v-if="item" class="container container-blog">
+      <h1>{{ item.title }}</h1>
+      <div id="editor" v-html="$md.render(item.detail.attributes.detail)"></div>
+    </div>
+    <BaSpinner v-else />
   </div>
 </template>
 

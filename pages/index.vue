@@ -1,13 +1,15 @@
 <template>
-  <div class="home-container">
-    <BaCarousel
-      :items="items"
-      class="home-carousel"
-      has-control
-      :interval="10000"
-      has-icon-down
-    />
-    <SlickCarousel />
+  <div>
+    <div v-if="items.length" class="home-container">
+      <BaCarousel
+        :items="items"
+        class="home-carousel"
+        has-control
+        :interval="5000"
+        has-icon-down
+      />
+    </div>
+    <BaSpinner v-else />
   </div>
 </template>
 

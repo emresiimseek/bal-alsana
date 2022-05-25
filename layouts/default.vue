@@ -20,7 +20,7 @@ export default defineComponent({})
   min-height: 100vh;
 
   .body {
-    padding-bottom: 15rem;
+    padding-bottom: 20rem;
   }
 }
 </style>

@@ -7,9 +7,11 @@ $breakpoints: (
 );
 
 :root {
-  --desktop-nav-height: 72px;
-  --mobile-header-height: 80px;
-  --desktop-breadcrumb-height: 44px;
-  --total-header-height: calc(var(--desktop-nav-height) + var(--desktop-breadcrumb-height))
+  --desktop-nav-height: 4.5rem;
+  --mobile-header-height: 5rem;
+  --desktop-breadcrumb-height: 2.75;
+  --total-header-height: calc(var(--desktop-nav-height) + var(--desktop-breadcrumb-height));
+  --footer-height: 20rem;
+  --expect-body-height: calc(var(--footer-height) + var(--total-header-height))
 
 }

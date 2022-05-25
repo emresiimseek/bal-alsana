@@ -1,6 +1,9 @@
 <template>
-  <div v-if="aboutMe" class="container container-about-me">
-    <div id="editor" v-html="$md.render(aboutMe.attributes.content)"></div>
+  <div>
+    <div v-if="aboutMe" class="container container-about-me">
+      <div id="editor" v-html="$md.render(aboutMe.attributes.content)"></div>
+    </div>
+    <BaSpinner v-else />
   </div>
 </template>
 
@@ -18,8 +21,15 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container-about-me {
   margin-top: 1rem;
+
+  #editor ::v-deep p {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 </style>
