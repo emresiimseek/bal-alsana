@@ -20,7 +20,12 @@ export default defineComponent({})
   min-height: 100vh;
 
   .body {
-    padding-bottom: 20rem;
+    @include for-desktop {
+      padding-bottom: 20rem;
+    }
+    @include for-mobile {
+      padding-bottom: 37.506rem;
+    }
   }
 }
 </style>

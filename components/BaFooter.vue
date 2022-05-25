@@ -83,17 +83,33 @@ a {
   position: absolute;
   bottom: 0;
   width: 100%;
+  display: flex;
   background-color: $brown--1;
   color: $yellow--2;
   min-height: 20rem;
-  align-items: center;
-  display: flex;
 
   &__main {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     margin: 0 3rem 0 3rem;
-    justify-content: space-between;
     align-items: center;
+
+    @include for-mobile {
+      padding-top: 1rem;
+      gap: 1rem;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      &__logo {
+        order: -1;
+      }
+      &__contact-info {
+        padding-top: 1rem;
+        border-top: 1px solid;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid;
+      }
+    }
 
     &__contact-info {
       display: flex;
@@ -112,6 +128,9 @@ a {
       &__socials {
         display: flex;
         justify-content: start;
+        @include for-mobile {
+          justify-content: center;
+        }
         gap: 3rem;
         padding: 1rem 0 1rem 0;
 

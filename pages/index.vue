@@ -37,15 +37,32 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-.home-carousel {
-  height: calc(100vh - var(--desktop-nav-height));
-
-  .carousel-item {
+@include for-desktop {
+  .home-carousel {
     height: calc(100vh - var(--desktop-nav-height));
 
-    img {
+    .carousel-item {
       height: calc(100vh - var(--desktop-nav-height));
-      object-fit: cover;
+
+      img {
+        height: calc(100vh - var(--desktop-nav-height));
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@include for-mobile {
+  .home-carousel {
+    height: calc(100vh - var(--mobile-header-height));
+
+    .carousel-item {
+      height: calc(100vh - var(--mobile-header-height));
+
+      img {
+        height: calc(100vh - var(--mobile-header-height));
+        object-fit: cover;
+      }
     }
   }
 }
