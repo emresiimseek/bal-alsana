@@ -11,7 +11,13 @@
         <BaCarousel :items="item.carouselItems" :interval="5000" />
       </template>
       <b-card-text>
-        {{ item.description }}
+        <div class="card-body-first-line">
+          <div>{{ item.title }}</div>
+          <span v-if="item.detail.attributes.price"
+            >{{ item.detail.attributes.price }} TL</span
+          >
+        </div>
+        <div>{{ item.description }}</div>
       </b-card-text>
       <div class="card-button">
         <b-button :to="item.to">Detay</b-button>
@@ -40,10 +46,28 @@ export default defineComponent({
   text-overflow: ellipsis;
 }
 
+.card-body-first-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  div {
+    font-weight: bolder;
+    font-size: larger;
+    color: $brown--2;
+  }
+
+  span {
+    font-weight: bolder;
+    font-size: larger;
+    color: $yellow--1;
+  }
+}
+
 .card {
   cursor: pointer;
   transition-duration: 0.5s;
-  height: 30rem !important;
+  height: 31rem !important;
 
   .card-header {
     padding: 0;
