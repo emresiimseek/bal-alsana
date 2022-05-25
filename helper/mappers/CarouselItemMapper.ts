@@ -4,7 +4,7 @@ import { CarouselItem } from '~/types/CarouselItem'
 import { StarapiCarousel } from '~/types/strapi/StarapiCarousel'
 
 export const mapImagesToUrls = (img: ImageData) =>
-  `https://sheltered-thicket-51938.herokuapp.com/${img.attributes.url}`
+  `https://sheltered-thicket-51938.herokuapp.com${img.attributes.url}`
 
 export const mapCarousel = (
   items: StrapiData<StarapiCarousel>[]
