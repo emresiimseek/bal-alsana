@@ -1,5 +1,5 @@
 <template>
-  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to">
+  <div :is="item.to ? 'nuxt-link' : 'div'" tag="div" :to="item.to" class="test">
     <b-card
       img-alt="Image"
       img-top
@@ -38,6 +38,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.card-container {
+  margin: auto;
+}
+
 .card-text {
   display: -webkit-box;
   -webkit-line-clamp: 2;
