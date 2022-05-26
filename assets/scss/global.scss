@@ -1,10 +1,12 @@
 @font-face {
-  font-family: "Quicksand";
-  src: local("Quicksand"),
-  url(~assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf) format("truetype");
+  font-family: 'Quicksand';
+  src: local('Quicksand'),
+    url(~assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf)
+      format('truetype');
 }
 
-html, body {
+html,
+body {
   font-family: 'Quicksand', sans-serif;
 }
 

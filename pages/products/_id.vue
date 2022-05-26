@@ -1,19 +1,20 @@
 <template>
   <div>
-    <div v-if="item" class="container detail-page">
-      <div class="detail-page__main">
-        <div class="detail-page__main__img">
-          <BaCarousel :items="item.carouselItems" />
+    <DetailPage v-if="item">
+      <BaCarousel :items="item.carouselItems" />
+      <template #right>
+        <div class="right-side">
+          <h2>{{ item.title }}</h2>
+          <div class="right-side__desc">
+            {{ item.description }}
+          </div>
+          <div class="right-side__price">
+            {{ item.detail.attributes.price }} <span> TL </span>
+          </div>
         </div>
-      </div>
-      <div class="detail-page__right-side">
-        <h2>{{ item.title }}</h2>
-        <div class="detail-page__right-side__desc">{{ item.description }}</div>
-        <div class="detail-page__right-side__price">
-          {{ item.detail.attributes.price }} <span> TL </span>
-        </div>
-      </div>
-    </div>
+      </template>
+    </DetailPage>
+
     <BaSpinner v-else />
   </div>
 </template>
@@ -29,9 +30,10 @@ import {
 import { useProduct } from '~/composables/useProduct'
 import { productMapper } from '~/helper/mappers/ProductMapper'
 import { CardItem } from '~/types/CardItem'
+import DetailPage from '~/components/DetailPage.vue'
 
 export default defineComponent({
-  components: {},
+  components: { DetailPage },
   setup() {
     const route = useRoute()
     const { product } = useProduct(route.value.params.id)
@@ -48,53 +50,28 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
-.detail-page {
-  display: flex;
-  margin-top: 1rem;
+.right-side {
+  color: $brown--2;
 
-  &__right-side {
-    flex: 2;
-    margin: 0 3rem 0 3rem;
-    color: $brown--2;
-
-    &__desc {
-      border-bottom: 1px solid #efefef;
-      padding-bottom: 1rem;
-    }
-
-    :first-child {
-      text-transform: uppercase;
-    }
-
-    &__price {
-      font-weight: bolder;
-      font-size: xx-large;
-      color: $yellow--1;
-
-      span {
-        font-size: x-large;
-      }
-    }
+  &__desc {
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 1rem;
   }
 
-  &__main {
-    flex: 3;
-    margin-bottom: 1rem;
+  :first-child {
+    text-transform: uppercase;
+  }
 
-    &__img {
-      background-color: rgb(255, 255, 255);
-      overflow: hidden;
+  &__price {
+    font-weight: bolder;
+    font-size: xx-large;
+    color: $yellow--1;
+    @include for-mobile {
+      float: right;
     }
 
-    img {
-      width: 100%;
-      aspect-ratio: 4/3;
-
-      &:hover {
-        transition-duration: 0.5s;
-        transform: scale(1.1);
-        cursor: pointer;
-      }
+    span {
+      font-size: x-large;
     }
   }
 }
