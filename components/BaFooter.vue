@@ -21,9 +21,7 @@
         <h5>Bal Alsana © 2022</h5>
       </div>
       <div class="container-footer__main__about">
-        <div class="container-footer__main__about__title">
-          About the company
-        </div>
+        <div class="container-footer__main__about__title">Hakkımızda</div>
         <div>
           {{ footer.attributes.aboutText }}
         </div>
