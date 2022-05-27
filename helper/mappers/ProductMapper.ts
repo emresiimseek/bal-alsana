@@ -5,13 +5,13 @@ import { StrapiData } from '~/types/strapi/Strapi'
 export const productMapper = (item: StrapiData<StarapiProduct>): CardItem => {
   return {
     carouselItems: item.attributes.image.data.map((i) => ({
-      img: `https://sheltered-thicket-51938.herokuapp.com${i.attributes.url}`,
+      img: i.attributes.url,
     })),
     description: item.attributes.description,
     detail: item,
     title: item.attributes.title,
     to: { name: 'products-id', params: { id: item.id.toString() } },
-    coverImage: `https://sheltered-thicket-51938.herokuapp.com${item.attributes.image.data[0].attributes.url}`,
+    coverImage: item.attributes.image.data[0].attributes.url,
   }
 }
 

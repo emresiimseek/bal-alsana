@@ -7,9 +7,9 @@ export const blogMapper = (item: StrapiData<StarapiBlog>): CardItem => ({
   detail: item,
   description: item.attributes.detail,
   to: { name: 'blogs-id', params: { id: item.id.toString() } },
-  coverImage: `https://sheltered-thicket-51938.herokuapp.com${item.attributes.images.data[0].attributes.url}`,
+  coverImage: item.attributes.images.data[0].attributes.url,
   carouselItems: item.attributes.images.data.map((i) => ({
-    img: `https://sheltered-thicket-51938.herokuapp.com${i.attributes.url}`,
+    img: i.attributes.url,
   })),
 })
 

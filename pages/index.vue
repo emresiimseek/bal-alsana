@@ -8,6 +8,13 @@
         :interval="5000"
         has-icon-down
       />
+      <BaVueSlickCarousel v-if="itemsProducts.length" class="products-carousel">
+        <CardItem
+          v-for="item in itemsProducts"
+          :key="item.title"
+          :item="item"
+          class="product-card-item"
+      /></BaVueSlickCarousel>
     </div>
     <BaSpinner v-else />
   </div>
@@ -18,12 +25,23 @@ import { defineComponent, Ref, ref, watchEffect } from '@nuxtjs/composition-api'
 import { useCarouselItem } from '~/composables/useCarouselItem'
 import { mapCarousel } from '~/helper/mappers/CarouselItemMapper'
 import { CarouselItem } from '~/types/CarouselItem'
+import BaVueSlickCarousel from '~/components/BaVueSlickCarousel.vue'
+import { productListMapper } from '~/helper/mappers/ProductMapper'
+import { useProducts } from '~/composables/useProducts'
+import { CardItem } from '~/types/CardItem'
 
 export default defineComponent({
-  components: {},
+  components: { BaVueSlickCarousel },
   setup() {
     const { response } = useCarouselItem()
+    const { products } = useProducts()
+
     const items: Ref<CarouselItem[]> = ref([])
+    const itemsProducts: Ref<CardItem[]> = ref([])
+
+    const mapProducts = () => {
+      itemsProducts.value = productListMapper(products.value)
+    }
 
     const mapCarouselItem = () => {
       if (!response.value?.length) return
@@ -31,12 +49,20 @@ export default defineComponent({
     }
 
     watchEffect(() => mapCarouselItem())
+    watchEffect(() => mapProducts())
 
-    return { items, response }
+    return { items, response, itemsProducts }
   },
 })
 </script>
 <style lang="scss">
+.products-carousel {
+  padding: 3rem 0 3rem 0;
+  .product-card-item {
+    padding: 1rem;
+  }
+}
+
 @include for-desktop {
   .home-carousel {
     height: calc(100vh - var(--desktop-nav-height));
