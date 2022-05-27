@@ -23,6 +23,9 @@ export default defineComponent({})
     @include for-desktop {
       padding-bottom: 20rem;
     }
+    @include for-tablet {
+      padding-bottom: 20rem;
+    }
     @include for-mobile {
       padding-bottom: 37.506rem;
     }
