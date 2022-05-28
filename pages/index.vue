@@ -10,8 +10,8 @@
       />
       <BaVueSlickCarousel v-if="itemsProducts.length" class="products-carousel">
         <CardItem
-          v-for="item in itemsProducts"
-          :key="item.title"
+          v-for="(item, index) in itemsProducts"
+          :key="index"
           :item="item"
           class="product-card-item"
       /></BaVueSlickCarousel>
