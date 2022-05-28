@@ -35,15 +35,11 @@ import {
   onUnmounted,
   ref,
 } from '@nuxtjs/composition-api'
-import { BIconSearch } from 'bootstrap-vue'
-import { useProducts } from '@/composables/useProducts'
 
 export default defineComponent({
   name: 'BaNavBar',
-  components: { BIconSearch },
 
   setup() {
-    const { data } = useProducts()
     const position = ref('')
 
     const onScroll = () => {
@@ -58,7 +54,7 @@ export default defineComponent({
       window.removeEventListener('scroll', onScroll)
     })
 
-    return { data, position }
+    return { position }
   },
 })
 </script>
