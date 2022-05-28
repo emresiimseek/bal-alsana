@@ -10,8 +10,8 @@
     >
       <!-- Slides with image only -->
       <b-carousel-slide
-        v-for="item in items"
-        :key="item.title"
+        v-for="(item, index) in items"
+        :key="index"
         :img-src="item.img"
         :caption="item.title"
         :text="item.description"

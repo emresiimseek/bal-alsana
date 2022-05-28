@@ -10,11 +10,12 @@
       />
       <BaVueSlickCarousel v-if="itemsProducts.length" class="products-carousel">
         <CardItem
-          v-for="item in itemsProducts"
-          :key="item.title"
+          v-for="(item, index) in itemsProducts"
+          :key="index"
           :item="item"
           class="product-card-item"
-      /></BaVueSlickCarousel>
+        />
+      </BaVueSlickCarousel>
     </div>
     <BaSpinner v-else />
   </div>
@@ -58,6 +59,7 @@ export default defineComponent({
 <style lang="scss">
 .products-carousel {
   padding: 3rem 0 3rem 0;
+
   .product-card-item {
     padding: 1rem;
   }
