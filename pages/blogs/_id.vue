@@ -13,6 +13,7 @@ import {
   defineComponent,
   ref,
   Ref,
+  useMeta,
   useRoute,
   watchEffect,
 } from '@nuxtjs/composition-api'
@@ -32,10 +33,21 @@ export default defineComponent({
       if (blog.value) item.value = blogMapper(blog.value)
     }
 
+    const { title, meta } = useMeta()
+    title.value = 'Merhaba'
+    meta.value = [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Selam',
+      },
+    ]
+
     watchEffect(() => blog.value && mapBlog())
 
-    return { item }
+    return { item, blog }
   },
+  head: {},
 })
 </script>
 

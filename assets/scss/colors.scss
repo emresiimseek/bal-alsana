@@ -1,16 +1,15 @@
 //colors
 
 $yellow--1: rgb(197, 143, 0);
-$yellow--2: rgb(255, 206, 77);
+$yellow--2: rgb(255, 206, 77, 0.7);
+$yellow--4: rgb(255, 206, 77);
 $yellow--3: #efeade;
 
 $color-dark: rgb(21, 19, 4);
 
-$brown--1: #2F2725;
+$brown--1: #2f2725;
 $brown--2: #835b46;
-
 
 :root {
   --main-color: #{$brown--1};
 }
-

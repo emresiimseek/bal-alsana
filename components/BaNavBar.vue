@@ -7,7 +7,7 @@
       class="navbar-custom"
     >
       <div class="container">
-        <b-navbar-brand href="/">
+        <b-navbar-brand href="/" :active="$route.path === '/'">
           <img src="../assets/images/icon.png" alt="icon" />
           <span> Bal Alsana </span>
         </b-navbar-brand>
@@ -16,9 +16,15 @@
 
         <b-collapse id="nav-collapse" class="custom-nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="/products">Ürünler</b-nav-item>
-            <b-nav-item href="/blogs">Blog</b-nav-item>
-            <b-nav-item href="/about-us">Hakkımızda</b-nav-item>
+            <b-nav-item :active="$route.name == 'products'" href="/products"
+              >Ürünler</b-nav-item
+            >
+            <b-nav-item :active="$route.name == 'blogs'" href="/blogs"
+              >Blog</b-nav-item
+            >
+            <b-nav-item :active="$route.name == 'about-us'" href="/about-us"
+              >Hakkımızda</b-nav-item
+            >
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
@@ -65,17 +71,39 @@ export default defineComponent({
   align-items: center;
 
   img {
-    max-height: 3rem;
-    max-width: 3rem;
+    max-height: 3.5rem;
+    max-width: 3.5rem;
   }
 }
 
 .navbar-custom .navbar-brand {
   color: $yellow--1;
+  margin-right: 2rem;
+  @include for-desktop {
+    margin-right: 4rem;
+  }
+}
+
+.navbar-custom .navbar-brand.active {
+  color: $yellow--4 !important;
 }
 
 a.nav-link {
-  color: $yellow--2 !important;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+  color: $yellow--1 !important;
+
+  @include for-desktop {
+    margin-right: 2rem;
+  }
+}
+a.nav-link.active {
+  color: $yellow--4 !important;
+  font-weight: bold;
+
+  @include for-desktop {
+    border-bottom: 2px solid $yellow--4 !important;
+  }
 }
 
 .navbar {
