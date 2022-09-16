@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.moqdev.android",
+               "sha256_cert_fingerprints": ["4f:7d:7b:d1:af:59:64:57:2e:3a:1a:39:1a:d0:0d:ec:ae:99:ae:7e"] }
+}]
